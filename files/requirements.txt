@@ -1,0 +1,5 @@
+pyspark>=4.0.1,<4.1
+dash>=2.17,<3.2
+pandas>=2.2
+numpy>=1.26
+waitress>=3.0
