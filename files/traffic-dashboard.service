@@ -1,0 +1,14 @@
+[Unit]
+Description=Traffic & Login Analytics Dashboard (PySpark + Dash)
+After=network.target
+
+[Service]
+User=YOUR_USER
+WorkingDirectory=/home/YOUR_USER/webdash
+Environment=LOG_DIR=/home/YOUR_USER/webdash/logs
+Environment=SPARK_DRIVER_MEMORY=2g
+ExecStart=/home/YOUR_USER/webdash/.venv/bin/waitress-serve --listen=0.0.0.0:8050 --threads=6 dashboard:server
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
